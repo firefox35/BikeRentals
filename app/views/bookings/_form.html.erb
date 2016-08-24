@@ -1,0 +1,54 @@
+ <section id="about" class="container content-section">	
+<%= form_for(@booking) do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="control-group">
+    <%= f.label "Select Bicycle", class: 'control-label' %>
+    <div class="controls">
+      <%= f.select(:bicycle_type, options_for_select([['Hybrid', 'Hybrid'],['Mountain','Mountain'],['Racer','Racer'],['Tandem','Tandem']])) %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_female_bicycles %><br>
+    <%= f.number_field :female_bicycles %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_male_bicycles %><br>
+    <%= f.number_field :male_bicycles %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_kids_bicycles %><br>
+    <%= f.number_field :kids_bicycles %>
+  </div>
+  <div class="field">
+    <%= f.label :date_from %><br>
+    <%= f.date_select :date_from %>
+  </div>
+  <div class="field">
+    <%= f.label :date_to %><br>
+    <%= f.date_select :date_to %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </section>
+<% end %>

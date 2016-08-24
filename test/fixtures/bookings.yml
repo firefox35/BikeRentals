@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  gentleman_bike: false
+  ladies_bike: false
+  childrens_bike: false
+  date_from: 2016-08-23
+  date_to: 2016-08-23
+  price: 9.99
+
+two:
+  user_id: 1
+  gentleman_bike: false
+  ladies_bike: false
+  childrens_bike: false
+  date_from: 2016-08-23
+  date_to: 2016-08-23
+  price: 9.99

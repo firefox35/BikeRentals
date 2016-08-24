@@ -1,2 +1,56 @@
-<h1>My Contact page</h1>
-<p>Find me in app/views/page/contact.html.erb</p>
+
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-gb" >
+<head>
+	<section id="about" class="container content-section">	
+	<header> 
+		<h1> Contact Us</h1> 
+	</header>
+	<div class="itemBody">  											
+	<div class="itemFullText">
+		<h4>Opening Times</h4>
+			<p>Monday - Friday   9am-6pm<br>
+			Saturday             10am-2pm </p>
+		<h4>Contact Details </h4>
+		<p><strong>Address:</strong>  Joey's Bike Shop, 25 Dame Street, Dublin 4 </p>
+		<p><strong>Telephone:</strong> 353 01 7161697 </p>
+		<br>
+		<h5>Contact Form</h5>
+	<form method="post"  id="userForm" enctype="multipart/form-data" action="http://www.joeysbikeshop.com/contact-us.html"><fieldset class="formFieldset">
+
+
+<!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
+<ol class="formContainer" id="rsform_1_page_0">
+  
+	<li class="rsform-block rsform-block-yourname">
+		<div class="formCaption">Your Name<strong class="formRequired">: *</strong></div>
+		<div class="formBody"><input type="text" value="" size="30"  name="form[yourname]" id="yourname"  class="rsform-input-box"/></div>
+		<div class="formDescription"></div>
+	</li>
+	<li class="rsform-block rsform-block-email">
+		<div class="formCaption">E-mail<strong class="formRequired">: *</strong></div>
+		<div class="formBody"><input type="text" value="" size="30"  name="form[Email]" id="Email"  class="rsform-input-box"/></div>
+		<div class="formDescription"></div>
+	</li>
+	<li class="rsform-block rsform-block-phone">
+		<div class="formCaption">Phone<strong class="formRequired">:</strong></div>
+		<div class="formBody"><input type="text" value="" size="15"  name="form[Phone]" id="Phone"  class="rsform-input-box"/></div>
+		<div class="formDescription"></div>
+	</li>
+	<li class="rsform-block rsform-block-details">
+		<div class="formCaption">Enquiry Details:</div>
+		<div class="formBody" style="margin-top:10px;"><textarea cols="55" rows="8" name="form[details]" id="details"  class="rsform-text-box"></textarea></div>
+		<div class="formDescription"></div>
+	</li>
+	<li class="rsform-block rsform-block-submit">
+		<div class="formCaption"></div>
+		<div class="formBody"><input type="submit" value="Submit" name="form[Submit]" id="Submit" style="margin-left:350px;margin-top:10px;" class="rsform-submit-button" /><span class="formClr"></span></div>
+		<div class="formDescription"></div>
+	</li>
+</ol>
+</fieldset>
+
+	    		    
+	</section>
+  </body>
+</html>
