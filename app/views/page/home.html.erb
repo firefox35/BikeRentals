@@ -1,2 +1,24 @@
-<h1>Page#home</h1>
-<p>Find me in app/views/page/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="jumbotron">
+        <%= image_tag("bike3.jpg", :alt => "rss feed") %>
+        <h1>Welcome to the World of Cycling</h1>
+        <p class="lead"> Come join the fun and see Dublin in a whole new light from the scenic
+        Tour of Trinity College up to Dublin Castle and then through the beauty of the Phoenix Park </p>
+        <p><a class="btn btn-lg btn-success" <%= link_to "Register", new_user_registration_path %>,
+        <a class="btn btn-lg btn-success" <%= link_to "Sign in", new_user_registration_path %></p>
+      </div>
+    </div> <!-- /container -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

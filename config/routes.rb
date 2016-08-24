@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  resources :bookings
   devise_for :admins
   
   get 'page/home'
@@ -8,6 +9,12 @@ Rails.application.routes.draw do
   get 'page/about'
 
   get 'page/contact'
+  
+  get 'page/admins'
+  
+  get 'bookings/new'
+  
+  delete 'page/logout'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

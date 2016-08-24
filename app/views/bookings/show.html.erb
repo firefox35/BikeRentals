@@ -1,0 +1,41 @@
+
+<section id="about" class="container content-section"><p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @booking.user_id %>
+</p>
+
+<p>
+  <strong>Gentleman bike:</strong>
+  <%= @booking.gentleman_bike %>
+</p>
+
+<p>
+  <strong>Ladies bike:</strong>
+  <%= @booking.ladies_bike %>
+</p>
+
+<p>
+  <strong>Childrens bike:</strong>
+  <%= @booking.childrens_bike %>
+</p>
+
+<p>
+  <strong>Date from:</strong>
+  <%= @booking.date_from %>
+</p>
+
+<p>
+  <strong>Date to:</strong>
+  <%= @booking.date_to %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @booking.price %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
+</section>

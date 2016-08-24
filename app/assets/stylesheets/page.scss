@@ -1,3 +1,13 @@
 // Place all the styles related to the page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container {
+    position: right;
+    top: 5px;
+}
+.container .jumbotron {
+    padding: 0px;
+    height: 30px;
+}

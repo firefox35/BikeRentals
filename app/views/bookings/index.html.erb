@@ -1,0 +1,44 @@
+<section id="about" class="container content-section">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bookings</h1>
+	
+<table>
+ 
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>Select Bicycle</th>
+      <th>Number of Female Bicycles</th>
+      <th>Number of Male Bicycles</th>
+      <th>Number of Kids Bicycles</th>
+      <th>Date from</th>
+      <th>Date to</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.user_id %></td>
+        <td><%= booking.female_bicycles %></td>
+        <td><%= booking.male_bicycles %></td>
+        <td><%= booking.kids_bicycles %></td>
+        <td><%= booking.date_from %></td>
+        <td><%= booking.date_to %></td>
+        <td><%= booking.price %></td>
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  		
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
+</section>
