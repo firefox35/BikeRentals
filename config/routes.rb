@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+
   resources :bookings
   devise_for :admins
   
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   
   get 'bookings/new'
   
+
   delete 'page/logout'
 
   devise_for :users

@@ -1,10 +1,28 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_user!
+  before_filter :ensure_admin, :only => [:edit, :destroy]
+  
   # GET /bookings
   # GET /bookings.json
   def index
     @bookings = Booking.all
+    
+    if params[:search]
+        # select all the bookings which match the search pattern
+        @bookings = Booking.search(params[:search])
+        # order the selected row(if any) ascending by created_at field/column
+        @bookings = @bookings.order("created_at ASC")
+    else
+        # order all the row descending by created_at field/column
+        @bookings = @bookings.order("created_at DESC")
+    end
+  end
+  
+  def ensure_admin
+      unless current_user && current_user.admin?
+          render :text => "Access Error Message", :status => :unauthorized
+      end
   end
 
   # GET /bookings/1
@@ -69,6 +87,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:user_id, :gentleman_bike, :ladies_bike, :childrens_bike, :date_from, :date_to, :price)
+      params.require(:booking).permit(:user_id,:bicycle_type,:female_bicycles, :male_bicycles, :kids_bicycles , :date_from, :date_to, :price)
     end
 end

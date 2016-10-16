@@ -39,6 +39,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
     # add_index :admins, :confirmation_token,   unique: true
     # add_index :admins, :unlock_token,         unique: true
   end
+
   class DeviseCreateAdmins < ActiveRecord::Migration
   def self.up
     create_table(:admins) do |t|
@@ -59,5 +60,5 @@ class DeviseCreateAdmins < ActiveRecord::Migration
   def self.down
     drop_table :admins
   end
-end
+  end
 end

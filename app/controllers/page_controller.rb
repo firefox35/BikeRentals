@@ -8,6 +8,9 @@ class PageController < ApplicationController
   def contact
   end
   
+  def new_booking
+  end
+  
   def menu
   end
 end
