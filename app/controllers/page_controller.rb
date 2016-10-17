@@ -13,4 +13,5 @@ class PageController < ApplicationController
   
   def menu
   end
+  
 end
