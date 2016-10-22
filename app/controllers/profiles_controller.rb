@@ -11,9 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @user = User.find(params[:id])
-    authorize @user
-  end
+  
+  end 
 
   # GET /profiles/new
   def new
@@ -26,9 +25,16 @@ class ProfilesController < ApplicationController
     end
   end  
   
-  def after_sign_in_path_for(resource)
-    "/signedinuserprofile"
+  def signedinuserprofile
+      profile = Profile.find_by_user_id(current_user.id)
+      if profile.nil?
+        redirect_to "/profiles/new"
+      else
+        @profile = Profile.find_by_user_id(current_user.id)
+        redirect_to "/profiles/#{@profile.id}"
+      end 
   end
+
     
   
 
