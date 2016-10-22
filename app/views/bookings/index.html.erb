@@ -1,5 +1,5 @@
 <section id="about" class="container content-section">
-<% if current_user.admin? %> [enclosed code] <% end %>
+<% if current_user && current_user.admin? %> <% end %>
 <p id="notice"><%= notice %></p>
 
 <%= form_tag(bookings_path, :method => "get") do %>
@@ -9,7 +9,7 @@
 
 <h1>Listing Bookings</h1>
 	
-<table>
+<table border-spacing="150">
  
   <thead>
     <tr>
@@ -21,7 +21,7 @@
       <th>Date from</th>
       <th>Date to</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      </th>
     </tr>
   </thead>
 

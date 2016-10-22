@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /profiles
   # GET /profiles.json
@@ -10,6 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @user = User.find(params[:id])
+    authorize @user
   end
 
   # GET /profiles/new
@@ -22,14 +25,9 @@ class ProfilesController < ApplicationController
       format.json { render json: @profile }
     end
   end  
-  def signedinuserprofile
-      profile = Profile.find_by_user_id(current_user.id)
-      if profile.nil?
-        redirect_to "/profiles/new"
-      else
-        @profile = Profile.find_by_user_id(current_user.id)
-        redirect_to "/profiles/#{@profile.id}"
-      end
+  
+  def after_sign_in_path_for(resource)
+    "/signedinuserprofile"
   end
     
   
@@ -79,6 +77,8 @@ class ProfilesController < ApplicationController
   end
 
   private
+  
+      
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       @profile = Profile.find(params[:id])

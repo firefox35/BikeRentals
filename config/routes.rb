@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  get 'admins' => 'admins#home'
+
   resources :profiles
   resources :bookings
   devise_for :admins
@@ -15,7 +17,8 @@ Rails.application.routes.draw do
   
   get 'bookings/new'
   
-  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
+  get '/signedinuserprofile' => 'admins#home'
+  
 
   delete 'page/logout'
 

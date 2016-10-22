@@ -11,7 +11,7 @@ class PageController < ApplicationController
   def new_booking
   end
   
-  def menu
+  def admins
   end
   
 end

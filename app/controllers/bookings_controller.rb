@@ -24,7 +24,8 @@ class BookingsController < ApplicationController
           render :text => "Access Error Message", :status => :unauthorized
       end
   end
-
+  
+  
   # GET /bookings/1
   # GET /bookings/1.json
   def show
